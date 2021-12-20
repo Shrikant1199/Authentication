@@ -17,15 +17,6 @@ phases:
       - echo "Building Java application"
       - cd Authentication-MS
       - mvn -DskipTests clean package
-      - docker build authentication_pipeline:latest .
-      - docker tag authentication_pipeline:latest 346916399611.dkr.ecr.us-east-2.amazonaws.com/authentication_pipeline:latest
-
-  post_build:
-    commands:
-      - echo "Post_build"
-      - docker push 346916399611.dkr.ecr.us-east-2.amazonaws.com/authentication_pipeline:latest
-      - printf '[{"name":"auth-ms-container","imageUri":"%s"}]' 346916399611.dkr.ecr.us-east-2.amazonaws.com/authentication_pipeline:latest > taskdefinition.json
-      - cat taskdefinition.json
 
 artifacts:
   files:
