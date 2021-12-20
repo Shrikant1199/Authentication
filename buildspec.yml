@@ -9,5 +9,5 @@ phases:
     - echo Build completed successfully
 artifacts:
   files:
-    - target/Athentication-Service.jar
+    - Authentication-MS/taskdefinition.json
  discard-paths: yes
